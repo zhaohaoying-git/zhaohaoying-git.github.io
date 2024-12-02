@@ -20,10 +20,10 @@
   --btn-default-hover-bg: #222;
   --btn-default-hover-color: #fff;
   --btn-default-hover-border-color: #222;
-  --highlight-background: #0d1117;
-  --highlight-foreground: #c9d1d9;
-  --highlight-gutter-background: #1f242a;
-  --highlight-gutter-foreground: #b6bdc5;
+  --highlight-background: #fefefe;
+  --highlight-foreground: #545454;
+  --highlight-gutter-background: #ededed;
+  --highlight-gutter-foreground: #656565;
   color-scheme: light;
 }
 html {
@@ -377,114 +377,90 @@ code.hljs {
   padding: 3px 5px
 }
 /*!
-  Theme: GitHub Dark
-  Description: Dark theme as seen on github.com
-  Author: github.com
-  Maintainer: @Hirse
-  Updated: 2021-05-15
+  Theme: a11y-light
+  Author: @ericwbailey
+  Maintainer: @ericwbailey
 
-  Outdated base version: https://github.com/primer/github-syntax-dark
-  Current colors taken from GitHub's CSS
+  Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css
 */
 .hljs {
-  color: #c9d1d9;
-  background: #0d1117
+  background: #fefefe;
+  color: #545454
 }
-.hljs-doctag,
-.hljs-keyword,
-.hljs-meta .hljs-keyword,
-.hljs-template-tag,
-.hljs-template-variable,
-.hljs-type,
-.hljs-variable.language_ {
-  /* prettylights-syntax-keyword */
-  color: #ff7b72
-}
-.hljs-title,
-.hljs-title.class_,
-.hljs-title.class_.inherited__,
-.hljs-title.function_ {
-  /* prettylights-syntax-entity */
-  color: #d2a8ff
-}
-.hljs-attr,
-.hljs-attribute,
-.hljs-literal,
-.hljs-meta,
-.hljs-number,
-.hljs-operator,
-.hljs-variable,
-.hljs-selector-attr,
-.hljs-selector-class,
-.hljs-selector-id {
-  /* prettylights-syntax-constant */
-  color: #79c0ff
-}
-.hljs-regexp,
-.hljs-string,
-.hljs-meta .hljs-string {
-  /* prettylights-syntax-string */
-  color: #a5d6ff
-}
-.hljs-built_in,
-.hljs-symbol {
-  /* prettylights-syntax-variable */
-  color: #ffa657
-}
+/* Comment */
 .hljs-comment,
-.hljs-code,
-.hljs-formula {
-  /* prettylights-syntax-comment */
-  color: #8b949e
+.hljs-quote {
+  color: #696969
 }
+/* Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
 .hljs-name,
-.hljs-quote,
-.hljs-selector-tag,
-.hljs-selector-pseudo {
-  /* prettylights-syntax-entity-tag */
-  color: #7ee787
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #d91e18
 }
-.hljs-subst {
-  /* prettylights-syntax-storage-modifier-import */
-  color: #c9d1d9
+/* Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #aa5d00
 }
+/* Yellow */
+.hljs-attribute {
+  color: #aa5d00
+}
+/* Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #008000
+}
+/* Blue */
+.hljs-title,
 .hljs-section {
-  /* prettylights-syntax-markup-heading */
-  color: #1f6feb;
-  font-weight: bold
+  color: #007faa
 }
-.hljs-bullet {
-  /* prettylights-syntax-markup-list */
-  color: #f2cc60
+/* Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #7928a1
 }
 .hljs-emphasis {
-  /* prettylights-syntax-markup-italic */
-  color: #c9d1d9;
   font-style: italic
 }
 .hljs-strong {
-  /* prettylights-syntax-markup-bold */
-  color: #c9d1d9;
   font-weight: bold
 }
-.hljs-addition {
-  /* prettylights-syntax-markup-inserted */
-  color: #aff5b4;
-  background-color: #033a16
-}
-.hljs-deletion {
-  /* prettylights-syntax-markup-deleted */
-  color: #ffdcd7;
-  background-color: #67060c
-}
-.hljs-char.escape_,
-.hljs-link,
-.hljs-params,
-.hljs-property,
-.hljs-punctuation,
-.hljs-tag {
-  /* purposely ignored */
-  
+@media screen and (-ms-high-contrast: active) {
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-built_in,
+  .hljs-bullet,
+  .hljs-comment,
+  .hljs-link,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-params,
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-type,
+  .hljs-quote {
+    color: highlight
+  }
+  .hljs-keyword,
+  .hljs-selector-tag {
+    font-weight: bold
+  }
 }
 .highlight:hover .copy-btn,
 .code-container:hover .copy-btn {
@@ -501,13 +477,11 @@ code.hljs {
   padding: 2px 6px;
   position: absolute;
   transition: opacity 0.2s ease-in-out;
-  background-color: #eee;
-  background-image: linear-gradient(#fcfcfc, #eee);
-  border: 1px solid #d5d5d5;
-  border-radius: 3px;
+  background: #fff;
+  border: 0;
   font-size: 0.8125em;
-  right: 4px;
-  top: 8px;
+  right: 0;
+  top: 0;
 }
 code,
 kbd,
@@ -1247,7 +1221,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #d9ffc1;
+    background: #ff017c;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
