@@ -20,10 +20,10 @@
   --btn-default-hover-bg: #222;
   --btn-default-hover-color: #fff;
   --btn-default-hover-border-color: #222;
-  --highlight-background: #fefefe;
-  --highlight-foreground: #545454;
-  --highlight-gutter-background: #ededed;
-  --highlight-gutter-foreground: #656565;
+  --highlight-background: #fff;
+  --highlight-foreground: #000;
+  --highlight-gutter-background: #e5e5e5;
+  --highlight-gutter-foreground: #191919;
   color-scheme: light;
 }
 html {
@@ -376,91 +376,87 @@ pre code.hljs {
 code.hljs {
   padding: 3px 5px
 }
-/*!
-  Theme: a11y-light
-  Author: @ericwbailey
-  Maintainer: @ericwbailey
+/*
 
-  Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css
+XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
+
 */
 .hljs {
-  background: #fefefe;
-  color: #545454
+  background: #fff;
+  color: black
 }
-/* Comment */
+/* Gray DOCTYPE selectors like WebKit */
+.xml .hljs-meta {
+  color: #c0c0c0
+}
 .hljs-comment,
 .hljs-quote {
-  color: #696969
+  color: #007400
 }
-/* Red */
-.hljs-variable,
-.hljs-template-variable,
 .hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-  color: #d91e18
-}
-/* Orange */
-.hljs-number,
-.hljs-built_in,
+.hljs-attribute,
+.hljs-keyword,
+.hljs-selector-tag,
 .hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-  color: #aa5d00
+.hljs-name {
+  color: #aa0d91
 }
-/* Yellow */
-.hljs-attribute {
-  color: #aa5d00
+.hljs-variable,
+.hljs-template-variable {
+  color: #3F6E74
 }
-/* Green */
+.hljs-code,
 .hljs-string,
+.hljs-meta .hljs-string {
+  color: #c41a16
+}
+.hljs-regexp,
+.hljs-link {
+  color: #0E0EFF
+}
+.hljs-title,
 .hljs-symbol,
 .hljs-bullet,
-.hljs-addition {
-  color: #008000
+.hljs-number {
+  color: #1c00cf
 }
-/* Blue */
-.hljs-title,
-.hljs-section {
-  color: #007faa
+.hljs-section,
+.hljs-meta {
+  color: #643820
 }
-/* Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #7928a1
+.hljs-title.class_,
+.hljs-class .hljs-title,
+.hljs-type,
+.hljs-built_in,
+.hljs-params {
+  color: #5c2699
 }
-.hljs-emphasis {
+.hljs-attr {
+  color: #836C28
+}
+.hljs-subst {
+  color: #000
+}
+.hljs-formula {
+  background-color: #eee;
   font-style: italic
 }
+.hljs-addition {
+  background-color: #baeeba
+}
+.hljs-deletion {
+  background-color: #ffc8bd
+}
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #9b703f
+}
+.hljs-doctag,
 .hljs-strong {
   font-weight: bold
 }
-@media screen and (-ms-high-contrast: active) {
-  .hljs-addition,
-  .hljs-attribute,
-  .hljs-built_in,
-  .hljs-bullet,
-  .hljs-comment,
-  .hljs-link,
-  .hljs-literal,
-  .hljs-meta,
-  .hljs-number,
-  .hljs-params,
-  .hljs-string,
-  .hljs-symbol,
-  .hljs-type,
-  .hljs-quote {
-    color: highlight
-  }
-  .hljs-keyword,
-  .hljs-selector-tag {
-    font-weight: bold
-  }
+.hljs-emphasis {
+  font-style: italic
 }
 .highlight:hover .copy-btn,
 .code-container:hover .copy-btn {
@@ -477,11 +473,29 @@ code.hljs {
   padding: 2px 6px;
   position: absolute;
   transition: opacity 0.2s ease-in-out;
-  background: #fff;
-  border: 0;
-  font-size: 0.8125em;
+  color: var(--highlight-foreground);
+  font-size: 14px;
   right: 0;
-  top: 0;
+  top: 2px;
+}
+figure.highlight {
+  border-radius: 5px;
+  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.4);
+  padding-top: 30px;
+}
+figure.highlight .table-container {
+  border-radius: 0 0 5px 5px;
+}
+figure.highlight::before {
+  background: #fc625d;
+  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+  left: 12px;
+  margin-top: -20px;
+  position: absolute;
+  border-radius: 50%;
+  content: ' ';
+  height: 12px;
+  width: 12px;
 }
 code,
 kbd,
@@ -1221,7 +1235,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #b86145;
+    background: #c6ffff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
