@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wwww.zhaohaoying.cn/schedule/index.html</loc>
+    
+    <lastmod>2024-12-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wwww.zhaohaoying.cn/2024/12/02/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</loc>
     
     <lastmod>2024-12-03</lastmod>
@@ -201,15 +210,6 @@
   
   <url>
     <loc>https://wwww.zhaohaoying.cn/404/index.html</loc>
-    
-    <lastmod>2024-11-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wwww.zhaohaoying.cn/schedule/index.html</loc>
     
     <lastmod>2024-11-25</lastmod>
     
