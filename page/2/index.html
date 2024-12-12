@@ -120,18 +120,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -184,7 +184,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/">
+    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -202,7 +202,195 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/02/%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">并查集算法模板</a>
+          <a href="/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-title-link" itemprop="url">动态规划</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-12-02 16:34:01" itemprop="dateCreated datePublished" datetime="2024-12-02T16:34:01+08:00">2024-12-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-03 12:06:03" itemprop="dateModified" datetime="2024-12-03T12:06:03+08:00">2024-12-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>131</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 自顶向下递归的动态规划</span><br><span class="line"><span class="function">def <span class="title">dp</span><span class="params">(状态<span class="number">1</span>, 状态<span class="number">2</span>, ...)</span>:</span></span><br><span class="line"><span class="function">    for 选择 in 所有可能的选择:</span></span><br><span class="line"><span class="function">        # 此时的状态已经因为做了选择而改变</span></span><br><span class="line"><span class="function">        result =</span> 求最值(result, <span class="built_in">dp</span>(状态<span class="number">1</span>, 状态<span class="number">2</span>, ...))</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"># 自底向上迭代的动态规划</span><br><span class="line"># 初始化 base <span class="keyword">case</span></span><br><span class="line">dp[<span class="number">0</span>][<span class="number">0</span>][...] = base <span class="keyword">case</span></span><br><span class="line"># 进行状态转移</span><br><span class="line"><span class="keyword">for</span> 状态<span class="number">1</span> in 状态<span class="number">1</span>的所有取值：</span><br><span class="line">    <span class="keyword">for</span> 状态<span class="number">2</span> in 状态<span class="number">2</span>的所有取值：</span><br><span class="line">        <span class="keyword">for</span> ...</span><br><span class="line">            dp[状态<span class="number">1</span>][状态<span class="number">2</span>][...] = 求最值(选择<span class="number">1</span>，选择<span class="number">2.</span>..)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E6%A8%A1%E7%89%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Haoying Zhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Haoying Zhao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Haoying Zhao">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E6%A8%A1%E7%89%88/" class="post-title-link" itemprop="url">宽度优先遍历模版</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-12-02 16:34:01" itemprop="dateCreated datePublished" datetime="2024-12-02T16:34:01+08:00">2024-12-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-12-03 12:06:11" itemprop="dateModified" datetime="2024-12-03T12:06:11+08:00">2024-12-03</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>58</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">st[<span class="number">1</span>] = <span class="literal">true</span>; <span class="comment">// 表示1号点已经被遍历过</span></span><br><span class="line">q.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (q.<span class="built_in">size</span>())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> t = q.<span class="built_in">front</span>();</span><br><span class="line">    q.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = h[t]; i != <span class="number">-1</span>; i = ne[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> j = e[i];</span><br><span class="line">        <span class="keyword">if</span> (!st[j])</span><br><span class="line">        &#123;</span><br><span class="line">            st[j] = <span class="literal">true</span>; <span class="comment">// 表示点j已经被遍历过</span></span><br><span class="line">            q.<span class="built_in">push</span>(j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Haoying Zhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Haoying Zhao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Haoying Zhao">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">并查集算法模板</a>
         </h2>
 
         <div class="post-meta-container">
@@ -282,7 +470,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E6%A8%A1%E7%89%88/">
+    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -300,97 +488,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/02/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%E6%A8%A1%E7%89%88/" class="post-title-link" itemprop="url">宽度优先遍历模版</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-12-02 16:34:01" itemprop="dateCreated datePublished" datetime="2024-12-02T16:34:01+08:00">2024-12-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-03 12:06:11" itemprop="dateModified" datetime="2024-12-03T12:06:11+08:00">2024-12-03</time>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>58</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">st[<span class="number">1</span>] = <span class="literal">true</span>; <span class="comment">// 表示1号点已经被遍历过</span></span><br><span class="line">q.<span class="built_in">push</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (q.<span class="built_in">size</span>())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> t = q.<span class="built_in">front</span>();</span><br><span class="line">    q.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = h[t]; i != <span class="number">-1</span>; i = ne[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> j = e[i];</span><br><span class="line">        <span class="keyword">if</span> (!st[j])</span><br><span class="line">        &#123;</span><br><span class="line">            st[j] = <span class="literal">true</span>; <span class="comment">// 表示点j已经被遍历过</span></span><br><span class="line">            q.<span class="built_in">push</span>(j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Haoying Zhao">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haoying Zhao">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Haoying Zhao">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/02/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/" class="post-title-link" itemprop="url">快速排序算法模版</a>
+          <a href="/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/" class="post-title-link" itemprop="url">快速排序算法模版</a>
         </h2>
 
         <div class="post-meta-container">
@@ -472,7 +570,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E6%9C%B4%E7%B4%A0%E7%89%88prim%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E6%9C%B4%E7%B4%A0%E7%89%88prim%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -490,7 +588,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/02/%E6%9C%B4%E7%B4%A0%E7%89%88prim%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">朴素版prim算法</a>
+          <a href="/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E6%9C%B4%E7%B4%A0%E7%89%88prim%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">朴素版prim算法</a>
         </h2>
 
         <div class="post-meta-container">
@@ -562,7 +660,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E6%A0%88%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/">
+    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E6%A0%88%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -580,7 +678,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/02/%E6%A0%88%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">栈算法模板</a>
+          <a href="/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E6%A0%88%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">栈算法模板</a>
         </h2>
 
         <div class="post-meta-container">
@@ -653,7 +751,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/">
+    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -671,7 +769,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/02/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/" class="post-title-link" itemprop="url">背包算法模版</a>
+          <a href="/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/" class="post-title-link" itemprop="url">背包算法模版</a>
         </h2>
 
         <div class="post-meta-container">
@@ -755,7 +853,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E9%93%BE%E8%A1%A8%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/">
+    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E9%93%BE%E8%A1%A8%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -773,7 +871,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/02/%E9%93%BE%E8%A1%A8%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">链表算法模板</a>
+          <a href="/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E9%93%BE%E8%A1%A8%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">链表算法模板</a>
         </h2>
 
         <div class="post-meta-container">
@@ -848,7 +946,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E9%98%9F%E5%88%97%E6%A8%A1%E6%9D%BF/">
+    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E9%98%9F%E5%88%97%E6%A8%A1%E6%9D%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -866,7 +964,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/02/%E9%98%9F%E5%88%97%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">队列模板</a>
+          <a href="/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E9%98%9F%E5%88%97%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">队列模板</a>
         </h2>
 
         <div class="post-meta-container">
@@ -949,7 +1047,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E6%9C%80%E7%9F%AD%E8%B7%AF/Bellman-Ford%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E6%9C%80%E7%9F%AD%E8%B7%AF/Bellman-Ford%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -967,7 +1065,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/02/%E6%9C%80%E7%9F%AD%E8%B7%AF/Bellman-Ford%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">Bellman-Ford算法</a>
+          <a href="/2024/12/02/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/%E6%9C%80%E7%9F%AD%E8%B7%AF/Bellman-Ford%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">Bellman-Ford算法</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1014,95 +1112,6 @@
     <div class="post-body" itemprop="articleBody">
           <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n, m;       <span class="comment">// n表示点数，m表示边数</span></span><br><span class="line"><span class="type">int</span> dist[N];        <span class="comment">// dist[x]存储1到x的最短路距离</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Edge</span>     <span class="comment">// 边，a表示出点，b表示入点，w表示边的权重</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a, b, w;</span><br><span class="line">&#125;edges[M];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 求1到n的最短路距离，如果无法从1走到n，则返回-1。</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bellman_ford</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> dist);</span><br><span class="line">    dist[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果第n次迭代仍然会松弛三角不等式，就说明存在一条长度是n+1的最短路径，由抽屉原理，路径中至少存在两个相同的点，说明图中存在负权回路。</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; m; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> a = edges[j].a, b = edges[j].b, w = edges[j].w;</span><br><span class="line">            <span class="keyword">if</span> (dist[b] &gt; dist[a] + w)</span><br><span class="line">                dist[b] = dist[a] + w;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (dist[n] &gt; <span class="number">0x3f3f3f3f</span> / <span class="number">2</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> dist[n];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://wwww.zhaohaoying.cn/2024/12/02/%E6%9C%80%E7%9F%AD%E8%B7%AF/Fast%20Dijkstra%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Haoying Zhao">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haoying Zhao">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Haoying Zhao">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/02/%E6%9C%80%E7%9F%AD%E8%B7%AF/Fast%20Dijkstra%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">Fast Dijkstra算法模板</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-12-02 16:34:01" itemprop="dateCreated datePublished" datetime="2024-12-02T16:34:01+08:00">2024-12-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-03 12:05:47" itemprop="dateModified" datetime="2024-12-03T12:05:47+08:00">2024-12-03</time>
-    </span>
-
-  
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>137</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> fast_dijkstra &#123;  </span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> maxn = <span class="number">210000</span>; </span><br><span class="line">	vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; G[maxn]; </span><br><span class="line">	<span class="type">int</span> d[maxn];  </span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">dijkstra</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">using</span> node = pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;;  </span><br><span class="line">		priority_queue&lt;node, vector&lt;node&gt;, greater&lt;node&gt;&gt; Q; </span><br><span class="line">		<span class="built_in">memset</span>(d, <span class="number">0x3f</span>, <span class="built_in">sizeof</span>(d));  </span><br><span class="line">		d[s] = <span class="number">0</span>;  </span><br><span class="line">		Q.<span class="built_in">emplace</span>(<span class="number">0</span>, s);  </span><br><span class="line">		<span class="keyword">while</span> (!Q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">			<span class="keyword">auto</span> [dist, x] = Q.<span class="built_in">top</span>(); Q.<span class="built_in">pop</span>(); </span><br><span class="line">			<span class="keyword">if</span> (dist != d[x])</span><br><span class="line">				<span class="keyword">continue</span>;  </span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">auto</span> [y, w] : G[x]) &#123;</span><br><span class="line">				<span class="keyword">if</span> (d[y] &gt; d[x] + w) &#123; </span><br><span class="line">					d[y] = d[x] + w;</span><br><span class="line">	                Q.<span class="built_in">emplace</span>(d[y], y);</span><br><span class="line">					<span class="comment">//p[y] = x;</span></span><br><span class="line">				&#125; </span><br><span class="line">			&#125;</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;n, &amp;m, &amp;s); </span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">			<span class="type">int</span> x, y, z;  </span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;x, &amp;y, &amp;z); </span><br><span class="line">			G[x].<span class="built_in">emplace_back</span>(y, z);</span><br><span class="line">		&#125;  </span><br><span class="line">		<span class="built_in">dijkstra</span>();  </span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, d[i] == <span class="number">0x3f3f3f3f</span> ? INT_MAX : d[i]); </span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">	<span class="comment">//freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin); </span></span><br><span class="line">	fast_dijkstra::<span class="built_in">solve</span>();  </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
 
