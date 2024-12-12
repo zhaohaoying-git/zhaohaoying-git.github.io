@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wwww.zhaohaoying.cn/2024/12/12/Point%20Transformer%20V3%20%E8%AF%BB%E8%AE%BA%E6%96%87/</loc>
+    
+    <lastmod>2024-12-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wwww.zhaohaoying.cn/2024/12/12/%E8%AF%BB%E8%AE%BA%E6%96%87/OctFormer%E8%AF%BB%E8%AE%BA%E6%96%87/</loc>
+    
+    <lastmod>2024-12-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wwww.zhaohaoying.cn/2024/12/12/%E8%AF%BB%E8%AE%BA%E6%96%87/FlatFormer%E8%AF%BB%E8%AE%BA%E6%96%87/</loc>
     
     <lastmod>2024-12-12</lastmod>
@@ -254,21 +272,14 @@
 
   
   <url>
-    <loc>https://wwww.zhaohaoying.cn/tags/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://wwww.zhaohaoying.cn/tags/%E7%82%B9%E4%BA%91/</loc>
     <lastmod>2024-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wwww.zhaohaoying.cn/tags/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2024-12-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wwww.zhaohaoying.cn/tags/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://wwww.zhaohaoying.cn/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/</loc>
     <lastmod>2024-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -296,14 +307,21 @@
   </url>
   
   <url>
-    <loc>https://wwww.zhaohaoying.cn/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/</loc>
+    <loc>https://wwww.zhaohaoying.cn/tags/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2024-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wwww.zhaohaoying.cn/tags/%E7%82%B9%E4%BA%91/</loc>
+    <loc>https://wwww.zhaohaoying.cn/tags/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wwww.zhaohaoying.cn/tags/%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2024-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -312,14 +330,7 @@
 
   
   <url>
-    <loc>https://wwww.zhaohaoying.cn/categories/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2024-12-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wwww.zhaohaoying.cn/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://wwww.zhaohaoying.cn/categories/%E8%AF%BB%E8%AE%BA%E6%96%87/</loc>
     <lastmod>2024-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -327,6 +338,13 @@
   
   <url>
     <loc>https://wwww.zhaohaoying.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wwww.zhaohaoying.cn/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -347,7 +365,7 @@
   </url>
   
   <url>
-    <loc>https://wwww.zhaohaoying.cn/categories/%E8%AF%BB%E8%AE%BA%E6%96%87/</loc>
+    <loc>https://wwww.zhaohaoying.cn/categories/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2024-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
